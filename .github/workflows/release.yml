@@ -3,7 +3,7 @@ name: ci
 on:
   push:
     branches:
-      - 'main'
+      - '7-2018q2'
 
 jobs:
   docker:

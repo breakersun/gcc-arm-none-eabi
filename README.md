@@ -12,3 +12,5 @@ hosted registry https://hub.docker.com/repository/docker/breakersun/gcc-arm-none
 
 - 5_4-2016q3
 - 7-2018q2
+- 10.3-2021.10
+- 12.3.rel1

@@ -26,4 +26,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: breakersun/gcc-arm-none-eabi:latest
+          tags: breakersun/gcc-arm-none-eabi:7-2018q2

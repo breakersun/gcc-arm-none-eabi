@@ -19,7 +19,7 @@ RUN apt-get update && \
       wget && \
     apt-get clean
 
-RUN wget -qO- https://developer.arm.com/-/media/Files/downloads/gnu/${gcc_release}/binrel/arm-gnu-toolchain-${gcc_release}-${arch}-${gcc_variant}.tar.xz | tar -xJvf
+RUN wget -qO- https://developer.arm.com/-/media/Files/downloads/gnu/${gcc_release}/binrel/arm-gnu-toolchain-${gcc_release}-${arch}-${gcc_variant}.tar.xz | tar -xJ
 
 ENV PATH "/work/arm-gnu-toolchain-${gcc_release}-${arch}-${gcc_variant}/bin:$PATH"
 

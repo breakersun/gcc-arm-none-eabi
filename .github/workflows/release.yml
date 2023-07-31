@@ -3,7 +3,7 @@ name: ci
 on:
   push:
     branches:
-      - 'main'
+      - '5_4-2016q3'
 
 jobs:
   docker:
@@ -26,4 +26,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: breakersun/gcc-arm-none-eabi:latest
+          tags: breakersun/gcc-arm-none-eabi:5_4-2016q3

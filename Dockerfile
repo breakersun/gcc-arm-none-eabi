@@ -18,10 +18,13 @@ RUN apt-get update && \
       build-essential \
       git \
       bzip2 \
-      wget && \
+      curl && \
     apt-get clean
 
-RUN wget -qO- https://developer.arm.com/-/media/Files/downloads/gnu-rm/${gcc_release}/gcc-${gcc_variant}-${gcc_full_release}-${date_stamp}-linux.tar.bz2 | tar -xj
-
-ENV PATH "/work/gcc-${gcc_variant}-${gcc_full_release}/bin:$PATH"
+# GCC ARM toolchain 2016q3
+RUN curl -L -o /opt/gcc-arm-none-eabi-5.tar.bz2 https://launchpad.net/gcc-arm-embedded/5.0/5-2016-q3-update/+download/gcc-arm-none-eabi-5_4-2016q3-20160926-linux.tar.bz2 2>/dev/null && \
+    tar xjf /opt/gcc-arm-none-eabi-5.tar.bz2 -C /opt && \
+    rm /opt/gcc-arm-none-eabi-5.tar.bz2 && \
+    ln -s /opt/gcc-arm-none-eabi-5_4-2016q3 /opt/gcc-arm-none-eabi-5
+ENV PATH="${PATH}:/opt/gcc-arm-none-eabi-5/bin"
 

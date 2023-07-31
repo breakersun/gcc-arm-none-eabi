@@ -18,6 +18,9 @@ RUN apt-get update && \
       build-essential \
       git \
       bzip2 \
+      lib32ncurses5 \ 
+      lib32tinfo5 \
+      libc6-i386 \
       wget && \
     apt-get clean
 

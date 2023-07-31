@@ -18,8 +18,9 @@ RUN apt-get update && \
       git \
       bzip2 \
       wget && \
-    apt-get clean && \
-		wget -qO https://developer.arm.com/-/media/Files/downloads/gnu-rm/${gcc_release}/gcc-${gcc_variant}-${gcc_full_release}-linux.tar.bz2 | tar -xj
+    apt-get clean
+
+RUN wget -qO- https://developer.arm.com/-/media/Files/downloads/gnu-rm/${gcc_release}/gcc-${gcc_variant}-${gcc_full_release}-linux.tar.bz2 | tar -xj
 
 ENV PATH "/work/gcc-${gcc_variant}-${gcc_full_release}/bin:$PATH"
 
